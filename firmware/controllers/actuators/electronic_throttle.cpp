@@ -619,8 +619,12 @@ bool EtbController::checkStatus() {
 
 		// If we have an error that's new, increment the counter
 		if (isTpsError && !hadTpsError) {
-			Counter++;
+			etbTpsErrorCounter++;
 		}
+
+        if (etbTpsErrorCounter > 40) {
+      etbTpsErrorCounter = 0
+    }
 
 		hadTpsError = isTpsError;
 
