@@ -223,7 +223,7 @@ int ebtResetCounter;
 void EtbController::reset(const char *reason) {
 	efiPrintf("ETB reset %s", reason);
 	m_shouldResetPid = true;
-	etbTpsErrorCounter = 0;
+	Counter = 0;
 	etbPpsErrorCounter = 0;
 #if EFI_UNIT_TEST
 	ebtResetCounter++;
@@ -619,7 +619,7 @@ bool EtbController::checkStatus() {
 
 		// If we have an error that's new, increment the counter
 		if (isTpsError && !hadTpsError) {
-			etbTpsErrorCounter++;
+			Counter++;
 		}
 
 		hadTpsError = isTpsError;
@@ -630,6 +630,9 @@ bool EtbController::checkStatus() {
 		if (isPpsError && !hadPpsError) {
 			etbPpsErrorCounter++;
 		}
+    if (etbPpsErrorCounter > 40) {
+      etbPpsErrorCounter = 0
+    }
 
 		hadPpsError = isPpsError;
 	} else {
