@@ -623,7 +623,7 @@ bool EtbController::checkStatus() {
 		}
 
         if (etbTpsErrorCounter > 40) {
-      etbTpsErrorCounter = 0
+      etbTpsErrorCounter = 0;
     }
 
 		hadTpsError = isTpsError;
@@ -635,7 +635,7 @@ bool EtbController::checkStatus() {
 			etbPpsErrorCounter++;
 		}
     if (etbPpsErrorCounter > 40) {
-      etbPpsErrorCounter = 0
+      etbPpsErrorCounter = 0;
     }
 
 		hadPpsError = isPpsError;
