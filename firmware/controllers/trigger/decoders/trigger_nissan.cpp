@@ -14,7 +14,7 @@
 #include "trigger_subaru.h"
 
 void initializeNissanK11(TriggerWaveform *s) {
-  s->initialize(FOUR_STROKE_CAM_SENSOR, SyncEdge::Rise);
+  s->initialize(FOUR_STROKE_CAM_SENSOR, SyncEdge::RiseOnly);
 
     s->addEvent720(110, TriggerValue::RISE, TriggerWheel::T_PRIMARY);
     s->addEvent720(180, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
@@ -32,7 +32,8 @@ void initializeNissanK11(TriggerWaveform *s) {
     s->addEvent720(720, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
 
     s->tdcPosition = 10;
-    s->setTriggerSynchronizationGap3(/*gapIndex*/0, 0.40, 0.50);
+    s->setTriggerSynchronizationGap3(1, 0.13, 0.21);
+
 }
 
 /**
