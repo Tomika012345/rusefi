@@ -32,8 +32,7 @@ void initializeNissanK11(TriggerWaveform *s) {
     s->addEvent720(720, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
 
     s->tdcPosition = 10;
-s->setTriggerSynchronizationGap3(1, 0.13, 0.21);
-
+s->setTriggerSynchronizationGap3(1, 4.4, 7.5);
 }
 
 /**
