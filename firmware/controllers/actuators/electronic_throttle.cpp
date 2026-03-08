@@ -1,4 +1,4 @@
-/**
+ /**
  * @file	electronic_throttle.cpp
  * @brief	Electronic Throttle driver
  *
@@ -223,7 +223,7 @@ int ebtResetCounter;
 void EtbController::reset(const char *reason) {
 	efiPrintf("ETB reset %s", reason);
 	m_shouldResetPid = true;
-	Counter = 0;
+	etbTpsErrorCounter = 0;
 	etbPpsErrorCounter = 0;
 #if EFI_UNIT_TEST
 	ebtResetCounter++;
