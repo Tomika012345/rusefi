@@ -13,17 +13,16 @@
 void configureHondaCbr600(TriggerWaveform *s) {
 	s->initialize(FOUR_STROKE_CAM_SENSOR, SyncEdge::RiseOnly);
 
-  s->tdcPosition = 0; // todo: hard-code TDC position once we know it
-  s->setTriggerSynchronizationGap2(/*from*/3.9, /*to*/8);
+  s->setTriggerSynchronizationGap2(/*from*/1.7, /*to*/2.5);
 
-	s->addEvent720(350.0f, TriggerValue::FALL);
-	s->addEvent720(360.0f, TriggerValue::RISE);
+	s->addEvent720(230.0f, TriggerValue::RISE);
+	s->addEvent720(330.0f, TriggerValue::FALL);
 
-	s->addEvent720(650.0f, TriggerValue::FALL);
-	s->addEvent720(660.0f, TriggerValue::RISE);
+	s->addEvent720(410.0f, TriggerValue::RISE);
+	s->addEvent720(510.0f, TriggerValue::FALL);
 
-	s->addEvent720(710.0f, TriggerValue::FALL);
-	s->addEvent720(720.0f, TriggerValue::RISE);
+	s->addEvent720(590.0f, TriggerValue::RISE);
+	s->addEvent720(720.0f, TriggerValue::FALL);
 }
 
 // TT_HONDA_K_CRANK_12_1
