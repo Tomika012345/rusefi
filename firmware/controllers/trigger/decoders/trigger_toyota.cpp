@@ -93,5 +93,5 @@ void initializeUzCam(TriggerWaveform *s) {
 	s->addToothRiseFall(360, width);
 
 s->setTriggerSynchronizationGap3(/*gapIndex*/0, 0.7, 1.3);
-s->setTriggerSynchronizationGap3(/*gapIndex*/0, 1.7, 2.5);
+s->setTriggerSynchronizationGap3(/*gapIndex*/1, 1.7, 3);
 }
