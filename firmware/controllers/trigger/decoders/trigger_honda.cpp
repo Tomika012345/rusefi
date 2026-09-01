@@ -72,7 +72,7 @@ void configureHondaK_4_1(TriggerWaveform *s) {
 void initialize_one_of_24_2_2(TriggerWaveform *s, int firstCount, int secondCount) {
 	s->initialize(FOUR_STROKE_CRANK_SENSOR, SyncEdge::RiseOnly);
 
-	float narrow = 360 / 24;
+	float narrow = 360 / 36;
 	float wide = narrow * 2;
 
 	float base = 0;
@@ -94,9 +94,9 @@ void initialize_one_of_24_2_2(TriggerWaveform *s, int firstCount, int secondCoun
 }
 
 void configureHondaJ30A2_24_1_1(TriggerWaveform *s) {
-	initialize_one_of_24_2_2(s, 6, 14);
+	initialize_one_of_24_2_2(s, 10, 22);
 
-    size_t count = 6;
+    size_t count = 10;
 
     s->tdcPosition = 0;
 
