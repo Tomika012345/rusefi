@@ -73,7 +73,7 @@ void initialize_one_of_24_2_2(TriggerWaveform *s, int firstCount, int secondCoun
 	s->initialize(FOUR_STROKE_CRANK_SENSOR, SyncEdge::RiseOnly);
 
 	float narrow = 360 / 36;
-	float wide = narrow * 4;
+	float wide = narrow * 2;
 
 	float base = 0;
 
@@ -83,6 +83,8 @@ void initialize_one_of_24_2_2(TriggerWaveform *s, int firstCount, int secondCoun
 	}
 
 	s->addToothFallRise(base + wide, wide / 2);
+	base += wide;
+  	s->addToothFallRise(base + wide, wide / 2);
 	base += wide;
 
 	for (int i = 0; i < secondCount; i++) {
