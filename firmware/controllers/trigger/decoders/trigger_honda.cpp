@@ -73,7 +73,7 @@ void initialize_one_of_24_2_2(TriggerWaveform *s, int firstCount, int secondCoun
 	s->initialize(FOUR_STROKE_CRANK_SENSOR, SyncEdge::RiseOnly);
 
 	float narrow = 360 / 36;
-	float wide = narrow * 2;
+	float wide = narrow * 4;
 
 	float base = 0;
 
@@ -100,9 +100,9 @@ void configureHondaJ30A2_24_1_1(TriggerWaveform *s) {
 
     s->tdcPosition = 0;
 
- s->setTriggerSynchronizationGap3(/*gapIndex*/0, 1.6, 4);
+ s->setTriggerSynchronizationGap3(/*gapIndex*/0, 2.6, 5);
   for (size_t i = 1 ; i < count ; i++) {
     s->setTriggerSynchronizationGap3(/*gapIndex*/i, 0.65, 1.4);
   }
-  s->setTriggerSynchronizationGap3(/*gapIndex*/count, 0.2, 0.55);
+  s->setTriggerSynchronizationGap3(/*gapIndex*/count, 0.1, 0.35);
   }
