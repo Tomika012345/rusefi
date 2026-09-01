@@ -585,14 +585,14 @@ void configureJeepEVD_36_2_2(TriggerWaveform *s) {
 	s->setTriggerSynchronizationGap3(/*gapIndex*/0, 0.2, 0.6);
 	s->setTriggerSynchronizationGap3(/*gapIndex*/1, 2.2, 3.8);
 
-	for (int i = 2; i < 17; i++) {
+	for (int i = 2; i < 22; i++) {
 		s->setTriggerSynchronizationGap3(/*gapIndex*/i, 0.7, 1.6);
 	}
 
 	/* Starting with big gap */
 	float base = wide - narrow / 2;
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 21; i++) {
 		s->addEventAngle(base, TriggerValue::RISE, TriggerWheel::T_PRIMARY);
 		s->addEventAngle(base + narrow / 2, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
 		base += narrow;
@@ -603,7 +603,7 @@ void configureJeepEVD_36_2_2(TriggerWaveform *s) {
 	s->addEventAngle(base + wide - narrow / 2, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
 	base += wide;
 
-	for (int i = 0; i < 15; i++) {
+	for (int i = 0; i < 10; i++) {
 		s->addEventAngle(base, TriggerValue::RISE, TriggerWheel::T_PRIMARY);
 		s->addEventAngle(base + narrow / 2, TriggerValue::FALL, TriggerWheel::T_PRIMARY);
 		base += narrow;
