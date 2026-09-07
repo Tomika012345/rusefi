@@ -605,9 +605,7 @@ bool EtbController::checkStatus() {
 		bool isTpsError = !Sensor::get(m_positionSensor).Valid;
 
 		// If we have an error that's new, increment the counter
-		if (isTpsError && !hadTpsError) {
-			etbTpsErrorCounter++;
-		}
+
 
 		hadTpsError = isTpsError;
 
