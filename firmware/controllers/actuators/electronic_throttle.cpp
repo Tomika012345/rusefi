@@ -615,7 +615,7 @@ bool EtbController::checkStatus() {
 
 		// If we have an error that's new, increment the counter
 		if (isPpsError && !hadPpsError) {
-			etbPpsErrorCounter++;
+			etbPpsErrorCounter = 0;
 		}
 
 		hadPpsError = isPpsError;
